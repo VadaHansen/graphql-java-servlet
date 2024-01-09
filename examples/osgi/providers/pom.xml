@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>graphql-java-servlet-osgi-examples-providers</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+        </configuration>
+        <extensions>true</extensions>
+        <groupId>org.apache.felix</groupId>
+        <version>3.3.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>graphql-java-servlet</artifactId>
+      <groupId>com.graphql-java-kickstart</groupId>
+      <scope>provided</scope>
+      <version>${graphql.java.servlet.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>graphql-java</artifactId>
+      <groupId>com.graphql-java</groupId>
+      <scope>provided</scope>
+      <version>${graphql.java.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>osgi.enterprise</artifactId>
+      <groupId>org.osgi</groupId>
+      <scope>provided</scope>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
+      <groupId>org.apache.felix</groupId>
+      <scope>provided</scope>
+      <version>1.2.4</version>
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+
+  <packaging>bundle</packaging>
+
+  <parent>
+    <artifactId>graphql-java-servlet-osgi-examples</artifactId>
+    <groupId>com.graphql-java-kickstart</groupId>
+    <version>10.1.0</version>
+  </parent>
+
+</project>

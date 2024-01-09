@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java-library-distribution'
+apply plugin: 'biz.aQute.bnd.builder'
+
+jar {
+    bndfile = 'bnd.bnd'
+}
+
+dependencies {
+    api(project(':graphql-java-kickstart'))
+
+    // Servlet
+    compileOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
+    compileOnly "jakarta.websocket:jakarta.websocket-api:2.1.1"
+    compileOnly "jakarta.websocket:jakarta.websocket-client-api:2.1.1"
+    implementation "org.slf4j:slf4j-api:$LIB_SLF4J_VER"
+
+    // OSGi
+    compileOnly 'org.osgi:org.osgi.core:6.0.0'
+    compileOnly 'org.osgi:org.osgi.service.cm:1.6.1'
+    compileOnly 'org.osgi:org.osgi.service.component:1.5.1'
+    compileOnly 'org.osgi:org.osgi.service.component.annotations:1.5.1'
+    compileOnly 'org.osgi:org.osgi.service.metatype.annotations:1.4.1'
+    compileOnly 'org.osgi:org.osgi.annotation:6.0.0'
+
+    testImplementation 'io.github.graphql-java:graphql-java-annotations:9.1'
+
+    // Unit testing
+    testImplementation "org.apache.groovy:groovy-all:4.0.13"
+    testImplementation "org.spockframework:spock-core:2.3-groovy-4.0"
+    testRuntimeOnly "cglib:cglib-nodep:3.3.0"
+    testRuntimeOnly "org.objenesis:objenesis:3.3"
+    testImplementation "org.slf4j:slf4j-simple:$LIB_SLF4J_VER"
+    testImplementation "org.springframework:spring-test:6.0.10"
+    testRuntimeOnly "org.springframework:spring-web:6.0.10"
+    testImplementation 'com.google.guava:guava:32.0.1-jre'
+    testImplementation "jakarta.servlet:jakarta.servlet-api:6.0.0"
+    testImplementation "jakarta.websocket:jakarta.websocket-api:2.1.1"
+    testImplementation "jakarta.websocket:jakarta.websocket-client-api:2.1.1"
+}

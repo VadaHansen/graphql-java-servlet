@@ -1,5 +1,5 @@
-/*
- * The MIT License (MIT)
+/!
+!* The MIT License (MIT)
  *
  * Copyright (c) 2016 oEmbedler Inc. and Contributors
  *
@@ -193,3 +193,4 @@ nexusPublishing {
 wrapper {
     distributionType = Wrapper.DistributionType.ALL
 }
+ 
